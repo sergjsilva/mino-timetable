@@ -1,24 +1,15 @@
-import {
-  ListOfStopsFerrolCoruna,
-  FerrolCorunaLaborDaysData,
-  FerrolCorunaSaturdayData,
-} from "./db/busesRoute.js";
+const routeList = document.querySelector(".route-list");
+const tblBody = document.querySelector(".cities-data");
 
-import { DaysOfWeek } from "./utility.js";
-
-const routeList = document.querySelectorAll(".route-list");
-const tblBody = document.querySelectorAll(".cities-data");
-
-function fillTableDataFerrolCoruna(ArrayOfCities, ArrayOfRoutes, dayIndex) {
+export function fillTableDataFerrolCoruna(ArrayOfCities, ArrayOfRoutes) {
   for (let data of ArrayOfRoutes) {
     let route = data.route;
     let tblHeader = document.createElement("th");
     tblHeader.setAttribute("scope", "col");
     tblHeader.innerText = route;
-    routeList[dayIndex].appendChild(tblHeader);
+    routeList.appendChild(tblHeader);
   }
 
-  // Monday to Friday
   for (let i = 0; i < ArrayOfCities.length; i++) {
     let rowData = document.createElement("tr");
 
@@ -37,17 +28,6 @@ function fillTableDataFerrolCoruna(ArrayOfCities, ArrayOfRoutes, dayIndex) {
       tblData.innerText = timeScheduled;
       rowData.appendChild(tblData);
     }
-    tblBody[dayIndex].appendChild(rowData);
+    tblBody.appendChild(rowData);
   }
 }
-
-fillTableDataFerrolCoruna(
-  ListOfStopsFerrolCoruna,
-  FerrolCorunaLaborDaysData,
-  DaysOfWeek.MONDAY_TO_FRIDAY
-);
-fillTableDataFerrolCoruna(
-  ListOfStopsFerrolCoruna,
-  FerrolCorunaSaturdayData,
-  DaysOfWeek.SATURDAY
-);
