@@ -33,6 +33,7 @@ function fillTableDataFerrolCoruna(ArrayOfCities, ArrayOfRoutes, dayIndex) {
     for (let data of ArrayOfRoutes) {
       let timeScheduled = data.stops[i];
       let tblData = document.createElement("td");
+      tblData.style.textAlign = "center";
       tblData.innerText = timeScheduled;
       rowData.appendChild(tblData);
     }
