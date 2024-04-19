@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ferrol-Coruna Bus and Train Schedule</title>
+    <title>Horario de Trens Coruna - Ferrol</title>
 
     <!--Google Fonts Link - Poppin Font-->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -31,45 +31,65 @@
   </head>
   <body>
     <div class="container mt-5">
-      <h1 class="text-center fw-bold">Horario de Transporte</h1>
+      <h2 class="text-center fw-bold">
+        <a href="index.html" class="btn btn-primary btn-lg d-block mb-3 fw-bold"
+          >Horario de Transporte</a
+        >
+      </h2>
       <div class="row justify-content-center mt-5">
         <div class="col-md-6">
           <div class="card rounded-4 shadow-lg border-0 mb-5">
             <div class="card-body">
               <h2 class="text-center fw-bold mb-3">
-                <i class="bi bi-bus-front"></i> Autobuses
+                <i class="bi bi-train-front"></i> Coruña
+                <i class="bi bi-arrow-right-circle"></i> Ferrol
               </h2>
               <a
-                href="ferrol_bus_schedule.html"
-                class="btn btn-primary btn-lg d-block mb-3"
-                >Horario: Ferrol - A Coruña</a
+                href="./trains/coruna-ferrol-route1.html"
+                class="btn btn-primary btn-lg d-block mb-3 fw-bold"
+                >06:31<i class="bi bi-caret-right"></i>07:49-Miño</a
               >
-              <!--href="la_coruna_bus_schedule.html"-->
-              <a href="#" class="btn btn-primary btn-lg d-block"
-                >Horario: A Coruña - Ferrol</a
+              <a
+                href="./trains/coruna-ferrol-route2.html"
+                class="btn btn-primary btn-lg d-block mb-3 fw-bold"
+                >12:21<i class="bi bi-caret-right"></i>13:32</a
+              >
+              <a
+                href="./trains/coruna-ferrol-route3.html"
+                class="btn btn-primary btn-lg d-block mb-3 fw-bold"
+                >15:04<i class="bi bi-caret-right"></i>16:23-Miño</a
+              >
+              <a
+                href="./trains/coruna-ferrol-route4.html"
+                class="btn btn-primary btn-lg d-block mb-3 fw-bold"
+                >17:20<i class="bi bi-caret-right"></i>18:38-Miño</a
+              >
+              <a
+                href="./trains/coruna-ferrol-route5.html"
+                class="btn btn-primary btn-lg d-block fw-bold"
+                >22:09<i class="bi bi-caret-right"></i>23:22</a
               >
             </div>
           </div>
+          <!--End Card-->
         </div>
+
+        <!--Betanzos-->
         <div class="col-md-6">
           <div class="card rounded-4 shadow-lg border-0 mb-5">
             <div class="card-body">
-              <h2 class="text-center fw-bold mb-3">
-                <i class="bi bi-train-front"></i> Trens
+              <h2 id="betanzos-ferrol" class="text-center fw-bold mb-3">
+                <i class="bi bi-train-front"></i> Betanzos
+                <i class="bi bi-arrow-right-circle"></i> Ferrol
               </h2>
               <a
-                href="ferrol_train_schedule.html"
-                class="btn btn-primary btn-lg d-block mb-3"
-                >Horario: Ferrol - A Coruña</a
-              >
-              <!--href="coruna_train_schedule.html"-->
-              <a
-                href="coruna_train_schedule.html"
-                class="btn btn-primary btn-lg d-block"
-                >Horario: A Coruña - Ferrol</a
+                href="./trains/betanzos-ferrol.html"
+                class="btn btn-primary btn-lg d-block mb-3 fw-bold"
+                >11:33<i class="bi bi-caret-right"></i>12:18-Miño</a
               >
             </div>
           </div>
+          <!--End Card-->
         </div>
       </div>
     </div>
