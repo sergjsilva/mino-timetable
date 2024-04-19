@@ -15,6 +15,10 @@ export function fillTableDataFerrolCoruna(ArrayOfCities, ArrayOfRoutes) {
 
     let city = ArrayOfCities[i];
 
+    if (city === "Miño") {
+      rowData.classList.add("table-success");
+    }
+
     let tdCity = document.createElement("td");
     //tblHeader.setAttribute("scope", "row");
     tdCity.innerText = city;
