@@ -1,4 +1,4 @@
-# Miño's Transit Schedule: Bridging Communities from Ferrol to A Coruña
+# Miño's Transit Schedule
 
 It is a bus and train timetable project tailored to the needs of our bustling city and its neighboring destinations.
 
