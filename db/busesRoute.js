@@ -12,7 +12,7 @@ export const ListOfStopsFerrolCoruna = [
   "Guísamo",
   "CHUAC",
   "A Coruña E.A.",
-  "EntreXardins",
+  "EntreXardíns",
   "A Coruña E.A.",
 ];
 
@@ -873,6 +873,429 @@ export const FerrolCorunaSundayData = [
       "23:11", //A Coruña E.A.
       "-", //Entrexardíns
       "-", //A Coruña E.A.
+    ],
+  },
+];
+
+export const ListOfStopsCorunaFerrol = [
+  "Entrexardíns",
+  "A Coruña E.A.",
+  "CHUAC",
+  "Guísamo",
+  "San Isidro",
+  "Betanzos",
+  "Miño",
+  "Pontedeume",
+  "Cabanas",
+  "Laraxe",
+  "A Gallada",
+  "Fene(Perlío)",
+  "Neda",
+  "Ferrol",
+];
+
+export const CorunaFerrolLaborDaysData = [
+  {
+    route: "L5",
+    stops: [
+      "-", //Entrexardíns
+      "6:15", //A Coruña E.A.
+      "6:17", //CHUAC
+      "6:35", //Guísamo
+      "6:42", //San Isidro
+      "-", //Betanzos
+      "6:50", //Miño
+      "7:02", //Pontedeume
+      "7:03", //Cabanas
+      "7:08", //Laraxe
+      "-", //A Gallada
+      "7:17", //Fene(Perlío)
+      "-", //Neda
+      "7:26", //Ferrol
+    ],
+  },
+  {
+    route: "L46",
+    stops: [
+      "-", //Entrexardíns
+      "-", //A Coruña E.A.
+      "-", //CHUAC
+      "-", //Guísamo
+      "-", //San Isidro
+      "-", //Betanzos
+      "-", //Miño
+      "7:10", //Pontedeume
+      "7:11", //Cabanas
+      "-", //Laraxe
+      "7:27", //A Gallada
+      "7:38", //Fene(Perlío)
+      "-", //Neda
+      "7:48", //Ferrol
+    ],
+  },
+  {
+    route: "L50",
+    stops: [
+      "-", //Entrexardíns
+      "-", //A Coruña E.A.
+      "-", //CHUAC
+      "-", //Guísamo
+      "-", //San Isidro
+      "-", //Betanzos
+      "8:00", //Miño
+      "8:23", //Pontedeume
+      "-", //Cabanas
+      "-", //Laraxe
+      "-", //A Gallada
+      "-", //Fene(Perlío)
+      "-", //Neda
+      "-", //Ferrol
+    ],
+  },
+  {
+    route: "L43",
+    stops: [
+      "7:45", //Entrexardíns
+      "7:49", //A Coruña E.A.
+      "7:52", //CHUAC
+      "8:14", //Guísamo
+      "-", //San Isidro
+      "8:26", //Betanzos
+      "8:42", //Miño
+      "8:56", //Pontedeume
+      "8:57", //Cabanas
+      "-", //Laraxe
+      "9:10", //A Gallada
+      "9:18", //Fene(Perlío)
+      "-", //Neda
+      "9:29", //Ferrol
+    ],
+  },
+  {
+    route: "L82",
+    stops: [
+      "-", //Entrexardíns
+      "-", //A Coruña E.A.
+      "-", //CHUAC
+      "-", //Guísamo
+      "9:30", //San Isidro
+      "-", //Betanzos
+      "9:39", //Miño
+      "9:53", //Pontedeume
+      "9:54", //Cabanas
+      "-", //Laraxe
+      "10:07", //A Gallada
+      "10:15", //Fene(Perlío)
+      "10:20", //Neda
+      "10:34", //Ferrol
+    ],
+  },
+  {
+    route: "L98",
+    stops: [
+      "-", //Entrexardíns
+      "10:00", //A Coruña E.A.
+      "10:03", //CHUAC
+      "10:26", //Guísamo
+      "10:33", //San Isidro
+      "-", //Betanzos
+      "10:43", //Miño
+      "10:58", //Pontedeume
+      "10:59", //Cabanas
+      "-", //Laraxe
+      "11:12", //A Gallada
+      "11:24", //Fene(Perlío)
+      "-", //Neda
+      "11:37", //Ferrol
+    ],
+  },
+
+  {
+    route: "XG817",
+    stops: [
+      "-", //Entrexardíns
+      "-", //A Coruña E.A.
+      "-", //CHUAC
+      "-", //Guísamo
+      "-", //San Isidro
+      "-", //Betanzos
+      "-", //Miño
+      "10:05", //Pontedeume
+      "-", //Cabanas
+      "-", //Laraxe
+      "-", //A Gallada
+      "10:15", //Fene(Perlío)
+      "-", //Neda
+      "10:25", //Ferrol
+    ],
+  },
+  {
+    route: "L98",
+    stops: [
+      "-", //Entrexardíns
+      "12:00", //A Coruña E.A.
+      "12:03", //CHUAC
+      "12:26", //Guísamo
+      "12:33", //San Isidro
+      "-", //Betanzos
+      "12:43", //Miño
+      "12:58", //Pontedeume
+      "12:59", //Cabanas
+      "-", //Laraxe
+      "13:12", //A Gallada
+      "13:24", //Fene(Perlío)
+      "-", //Neda
+      "13:37", //Ferrol
+    ],
+  },
+  {
+    route: "XG817",
+    stops: [
+      "-", //Entrexardíns
+      "-", //A Coruña E.A.
+      "-", //CHUAC
+      "-", //Guísamo
+      "-", //San Isidro
+      "-", //Betanzos
+      "-", //Miño
+      "12:25", //Pontedeume
+      "12:30", //Cabanas
+      "12:35", //Laraxe
+      "-", //A Gallada
+      "12:40", //Fene(Perlío)
+      "-", //Neda
+      "12:50", //Ferrol
+    ],
+  },
+  {
+    route: "L97",
+    stops: [
+      "-", //Entrexardíns
+      "14:30", //A Coruña E.A.
+      "-", //CHUAC
+      "-", //Guísamo
+      "-", //San Isidro
+      "14:53", //Betanzos
+      "15:14", //Miño
+      "15:28", //Pontedeume
+      "15:29", //Cabanas
+      "-", //Laraxe
+      "15:42", //A Gallada
+      "15:51", //Fene(Perlío)
+      "-", //Neda
+      "16:00", //Ferrol
+    ],
+  },
+  {
+    route: "XG817",
+    stops: [
+      "-", //Entrexardíns
+      "-", //A Coruña E.A.
+      "-", //CHUAC
+      "-", //Guísamo
+      "-", //San Isidro
+      "-", //Betanzos
+      "-", //Miño
+      "14:55", //Pontedeume
+      "-", //Cabanas
+      "-", //Laraxe
+      "-", //A Gallada
+      "15:05", //Fene(Perlío)
+      "-", //Neda
+      "15:20", //Ferrol
+    ],
+  },
+  {
+    route: "XG817",
+    stops: [
+      "-", //Entrexardíns
+      "-", //A Coruña E.A.
+      "-", //CHUAC
+      "-", //Guísamo
+      "-", //San Isidro
+      "-", //Betanzos
+      "-", //Miño
+      "15:30", //Pontedeume
+      "-", //Cabanas
+      "-", //Laraxe
+      "-", //A Gallada
+      "15:40", //Fene(Perlío)
+      "-", //Neda
+      "15:50", //Ferrol
+    ],
+  },
+  {
+    route: "L98",
+    stops: [
+      "-", //Entrexardíns
+      "16:00", //A Coruña E.A.
+      "16:03", //CHUAC
+      "16:26", //Guísamo
+      "16:33", //San Isidro
+      "-", //Betanzos
+      "16:43", //Miño
+      "16:58", //Pontedeume
+      "16:59", //Cabanas
+      "-", //Laraxe
+      "17:12", //A Gallada
+      "17:24", //Fene(Perlío)
+      "-", //Neda
+      "17:37", //Ferrol
+    ],
+  },
+  {
+    route: "L97",
+    stops: [
+      "-", //Entrexardíns
+      "17:15", //A Coruña E.A.
+      "-", //CHUAC
+      "-", //Guísamo
+      "-", //San Isidro
+      "17:38", //Betanzos
+      "17:59", //Miño
+      "18:13", //Pontedeume
+      "18:14", //Cabanas
+      "-", //Laraxe
+      "18:27", //A Gallada
+      "18:36", //Fene(Perlío)
+      "-", //Neda
+      "18:45", //Ferrol
+    ],
+  },
+
+  {
+    route: "XG817",
+    stops: [
+      "-", //Entrexardíns
+      "-", //A Coruña E.A.
+      "-", //CHUAC
+      "-", //Guísamo
+      "-", //San Isidro
+      "-", //Betanzos
+      "-", //Miño
+      "17:05", //Pontedeume
+      "-", //Cabanas
+      "-", //Laraxe
+      "-", //A Gallada
+      "17:15", //Fene(Perlío)
+      "-", //Neda
+      "17:30", //Ferrol
+    ],
+  },
+
+  {
+    route: "L38",
+    stops: [
+      "-", //Entrexardíns
+      "18:15", //A Coruña E.A.
+      "18:18", //CHUAC
+      "18:41", //Guísamo
+      "18:48", //San Isidro
+      "-", //Betanzos
+      "18:58", //Miño
+      "19:13", //Pontedeume
+      "19:14", //Cabanas
+      "-", //Laraxe
+      "19:27", //A Gallada
+      "19:35", //Fene(Perlío)
+      "19:46", //Neda
+      "20:03", //Ferrol
+    ],
+  },
+  {
+    route: "XG817",
+    stops: [
+      "-", //Entrexardíns
+      "-", //A Coruña E.A.
+      "-", //CHUAC
+      "-", //Guísamo
+      "-", //San Isidro
+      "-", //Betanzos
+      "-", //Miño
+      "18:55", //Pontedeume
+      "-", //Cabanas
+      "-", //Laraxe
+      "-", //A Gallada
+      "19:05", //Fene(Perlío)
+      "-", //Neda
+      "19:20", //Ferrol
+    ],
+  },
+  {
+    route: "L97",
+    stops: [
+      "-", //Entrexardíns
+      "20:00", //A Coruña E.A.
+      "-", //CHUAC
+      "-", //Guísamo
+      "-", //San Isidro
+      "20:23", //Betanzos
+      "20:44", //Miño
+      "20:58", //Pontedeume
+      "20:59", //Cabanas
+      "-", //Laraxe
+      "21:12", //A Gallada
+      "21:21", //Fene(Perlío)
+      "-", //Neda
+      "21:30", //Ferrol
+    ],
+  },
+  {
+    route: "XG817",
+    stops: [
+      "-", //Entrexardíns
+      "-", //A Coruña E.A.
+      "-", //CHUAC
+      "-", //Guísamo
+      "-", //San Isidro
+      "-", //Betanzos
+      "-", //Miño
+      "20:30", //Pontedeume
+      "-", //Cabanas
+      "-", //Laraxe
+      "-", //A Gallada
+      "20:40", //Fene(Perlío)
+      "-", //Neda
+      "20:50", //Ferrol
+    ],
+  },
+
+  {
+    route: "XG817",
+    stops: [
+      "-", //Entrexardíns
+      "-", //A Coruña E.A.
+      "-", //CHUAC
+      "-", //Guísamo
+      "-", //San Isidro
+      "-", //Betanzos
+      "-", //Miño
+      "21:25", //Pontedeume
+      "-", //Cabanas
+      "-", //Laraxe
+      "-", //A Gallada
+      "21:35", //Fene(Perlío)
+      "-", //Neda
+      "21:50", //Ferrol
+    ],
+  },
+  {
+    route: "L5",
+    stops: [
+      "-", //Entrexardíns
+      "22:00", //A Coruña E.A.
+      "22:02", //CHUAC
+      "22:20", //Guísamo
+      "22:27", //San Isidro
+      "-", //Betanzos
+      "22:35", //Miño
+      "22:47", //Pontedeume
+      "22:48", //Cabanas
+      "22:53", //Laraxe
+      "-", //A Gallada
+      "23:02", //Fene(Perlío)
+      "-", //Neda
+      "23:11", //Ferrol
     ],
   },
 ];
