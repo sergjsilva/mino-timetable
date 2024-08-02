@@ -1,4 +1,44 @@
-@import url(./intro.css);
+@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+:root {
+  --bus-color: rgb(64, 224, 59);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+  color: #000000;
+
+  background-image: url("../assets/images/photo-coruna.avif");
+
+  min-height: 100vh;
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: #fff;
+}
+
+.container {
+  background: rgba(
+    0,
+    0,
+    0,
+    0.7
+  ); /* Add a dark overlay for better readability */
+  padding: 20px;
+  border-radius: 15px;
+}
+
+.ico-bus {
+  height: 48px;
+}
+
+/* Right Arrow Blue*/
+.icon-right-arrow {
+  width: 16px;
+  height: 16px;
+}
 
 .tbl-container {
   max-width: fit-content;
@@ -34,4 +74,12 @@ th:first-child {
 
 th:first-child {
   z-index: 3;
+}
+
+/*  Media */
+@media (max-width: 576px) {
+  .icon-large {
+    width: 16px;
+    height: 16px;
+  }
 }
