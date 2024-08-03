@@ -25,11 +25,17 @@ const loader = document.querySelector("#loader");
 // -------------------
 
 const baseUrl = "https://sergjsilva.github.io/mino-timetable/JSON";
-const stopsUrl = `${baseUrl}/stops-ferrol-to-coruna.JSON`;
-const routesUrl = `${baseUrl}/bus-laborDay-ferrol-to-coruna.JSON`;
+const stopsLaborDayFerrolCorunaUrl = `${baseUrl}/stops-ferrol-to-coruna.JSON`;
+const routesLaborDayFerrolCorunaUrl = `${baseUrl}/bus-laborDay-ferrol-to-coruna.JSON`;
 
-fillTableData(stopsUrl, routesUrl, "#tbl-labor-day-ferrol-coruna");
+loader.hidden = false;
+fillTableData(
+  stopsLaborDayFerrolCorunaUrl,
+  routesLaborDayFerrolCorunaUrl,
+  "#tbl-labor-day-ferrol-coruna"
+);
 
+loader.hidden = true;
 //------------------
 // Helper Functions
 //------------------

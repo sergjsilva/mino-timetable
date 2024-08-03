@@ -64,6 +64,10 @@ body {
   margin-top: 0.25rem;
 }
 
+.nav-link {
+  font-size: 16px;
+}
+
 .ico-bus {
   height: 48px;
 }
@@ -111,9 +115,30 @@ th:first-child {
 }
 
 /*  Media */
+@media screen and (max-width: 500px) {
+  .nav-link {
+    font-size: 15px;
+  }
+}
+
+@media screen and (max-width: 490px) {
+  .nav-link {
+    font-size: 13px;
+  }
+}
+
 @media screen and (max-width: 480px) {
   table td,
   table th {
     font-size: 12px; /* Slightly smaller font size for very small screens */
+  }
+  .nav-link {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 390px) {
+  .nav-link {
+    font-size: 9px;
   }
 }
