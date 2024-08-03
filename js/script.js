@@ -1,26 +1,29 @@
-// Lunes - Viernes
+// Monday-Friday
 const laborFerrolCoruna = "#labor-day-ferrol-coruna";
 const laborCorunaFerrol = "#labor-day-coruna-ferrol";
-const btnLaborFerrolCoruna = getButtonByTarget(laborFerrolCoruna);
-const btnLaborCorunaFerrol = getButtonByTarget(laborCorunaFerrol);
 
-// Sabado
+// Saturday
 const saturdayFerrolCoruna = "#saturday-ferrol-coruna";
 const saturdayCorunaFerrol = "#saturday-coruna-ferrol";
-const btnSaturdayFerrolCoruna = getButtonByTarget(saturdayFerrolCoruna);
-const btnSaturdayCorunaFerrol = getButtonByTarget(saturdayCorunaFerrol);
 
+// Sunday
 const sundayFerrolCoruna = "#sunday-ferrol-coruna";
 const sundayCorunaFerrol = "#sunday-coruna-ferrol";
+
+// Buttons
+const btnLaborFerrolCoruna = getButtonByTarget(laborFerrolCoruna);
+const btnLaborCorunaFerrol = getButtonByTarget(laborCorunaFerrol);
+const btnSaturdayFerrolCoruna = getButtonByTarget(saturdayFerrolCoruna);
+const btnSaturdayCorunaFerrol = getButtonByTarget(saturdayCorunaFerrol);
 const btnSundayFerrolCoruna = getButtonByTarget(sundayFerrolCoruna);
 const btnSundayCorunaFerrol = getButtonByTarget(sundayCorunaFerrol);
 
-printButtonTarget(btnLaborFerrolCoruna);
-printButtonTarget(btnLaborCorunaFerrol);
-printButtonTarget(btnSaturdayFerrolCoruna);
-printButtonTarget(btnSaturdayCorunaFerrol);
-printButtonTarget(btnSundayFerrolCoruna);
-printButtonTarget(btnSundayCorunaFerrol);
+// -------------------
+// Listener Functions
+// -------------------
+
+btnLaborFerrolCoruna.addEventListener("click", () => {});
+
 //------------------
 // Helper Functions
 //------------------
