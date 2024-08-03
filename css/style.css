@@ -17,6 +17,27 @@ body {
   padding: 0;
 }
 
+.loader {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.loader-items-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.loader-items-container img {
+  position: relative;
+  left: 5%;
+}
+
 .main {
   margin: 0;
   padding: 0;
@@ -90,3 +111,9 @@ th:first-child {
 }
 
 /*  Media */
+@media screen and (max-width: 480px) {
+  table td,
+  table th {
+    font-size: 12px; /* Slightly smaller font size for very small screens */
+  }
+}
