@@ -3,19 +3,30 @@
   --bus-color: rgb(64, 224, 59);
 }
 
-body {
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
   font-family: "Montserrat", sans-serif;
-  color: #000000;
+}
 
-  background-image: url("../assets/images/photo-coruna.avif");
-
-  background-size: cover;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-position: center;
+body {
   color: #fff;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.main {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+  padding-top: 1.2rem;
+  background-image: url("../assets/images/photo-coruna.avif");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 
 .container {
@@ -27,6 +38,9 @@ body {
   ); /* Add a dark overlay for better readability */
   padding: 20px;
   border-radius: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 0.25rem;
 }
 
 .ico-bus {
@@ -76,9 +90,3 @@ th:first-child {
 }
 
 /*  Media */
-@media (max-width: 576px) {
-  .icon-large {
-    width: 16px;
-    height: 16px;
-  }
-}

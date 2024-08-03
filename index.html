@@ -24,308 +24,310 @@
     <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
-    <div class="container mt-5" id="intro-page">
-      <h1 class="text-center mx-auto fw-bold">Autobuses: Miño - A Coruña</h1>
+    <main class="main">
+      <div class="container" id="intro-page">
+        <h1 class="text-center mx-auto fw-bold">Autobuses</h1>
+        <h2 class="text-center mx-auto fw-bold">Miño - A Coruña</h2>
+        <ul class="nav nav-tabs mt-5 fw-bold" id="scheduleTabs" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link active"
+              id="lunes-viernes-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#lunes-viernes"
+              type="button"
+              role="tab"
+              aria-controls="lunes-viernes"
+              aria-selected="true"
+            >
+              Lunes - Viernes
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link"
+              id="sabado-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#sabado"
+              type="button"
+              role="tab"
+              aria-controls="sabado"
+              aria-selected="false"
+            >
+              Sabado
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link"
+              id="sunday-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#sunday"
+              type="button"
+              role="tab"
+              aria-controls="sunday"
+              aria-selected="false"
+            >
+              Domingo y Festivos
+            </button>
+          </li>
+        </ul>
 
-      <ul class="nav nav-tabs mt-5 fw-bold" id="scheduleTabs" role="tablist">
-        <li class="nav-item" role="presentation">
-          <button
-            class="nav-link active"
-            id="lunes-viernes-tab"
-            data-bs-toggle="tab"
-            data-bs-target="#lunes-viernes"
-            type="button"
-            role="tab"
-            aria-controls="lunes-viernes"
-            aria-selected="true"
+        <div class="tab-content" id="scheduleTabsContent">
+          <!-- Lunes - Viernes Section -->
+          <div
+            class="tab-pane fade show active"
+            id="lunes-viernes"
+            role="tabpanel"
+            aria-labelledby="lunes-viernes-tab"
           >
-            Lunes - Viernes
-          </button>
-        </li>
-        <li class="nav-item" role="presentation">
-          <button
-            class="nav-link"
-            id="sabado-tab"
-            data-bs-toggle="tab"
-            data-bs-target="#sabado"
-            type="button"
-            role="tab"
-            aria-controls="sabado"
-            aria-selected="false"
+            <div class="card mt-3">
+              <div class="card-header text-center">
+                <h3 class="card-title mb-0">
+                  <button
+                    class="btn btn-dark"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#labor-day-ferrol-coruna"
+                    role="button"
+                    aria-expanded="false"
+                    aria-controls="labor-day-ferrol-coruna"
+                  >
+                    <i class="bi bi-bus-front-fill ico-bus"></i> Sentido: Ferrol
+                    <img
+                      class="icon-right-arrow"
+                      src="./assets/icons/icon-right-blue.png"
+                      alt="right arrow icon"
+                    />
+                    Coruña
+                  </button>
+                </h3>
+              </div>
+              <!-- Collapsible content - Ferrol -> Coruña -->
+              <div id="labor-day-ferrol-coruna" class="collapse">
+                <div class="card-body">
+                  <table class="table table-striped table-condensed">
+                    <thead>
+                      <tr class="route-list table-dark">
+                        <th scope="col">Hora</th>
+                      </tr>
+                    </thead>
+                    <tbody class="cities-data" id="tbl-labor-day-ferrol-coruna">
+                      <!-- JavaScript will fill this -->
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            <div class="card mt-3">
+              <div class="card-header text-center">
+                <h3 class="card-title mb-0">
+                  <button
+                    class="btn btn-dark"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#labor-day-coruna-ferrol"
+                    role="button"
+                    aria-expanded="false"
+                    aria-controls="labor-day-coruna-ferrol"
+                  >
+                    <i class="bi bi-bus-front-fill ico-bus"></i> Sentido: Coruña
+                    <img
+                      class="icon-right-arrow"
+                      src="./assets/icons/icon-right-blue.png"
+                      alt="right arrow icon"
+                    />
+                    Ferrol
+                  </button>
+                </h3>
+              </div>
+              <!-- Collapsible content - Coruña -> Ferrol -->
+              <div id="labor-day-coruna-ferrol" class="collapse">
+                <div class="card-body">
+                  <table class="table table-striped table-condensed">
+                    <thead>
+                      <tr class="route-list table-dark">
+                        <th scope="col">Hora</th>
+                      </tr>
+                    </thead>
+                    <tbody class="cities-data" id="tbl-labor-day-coruna-ferrol">
+                      <!-- JavaScript will fill this -->
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sabado Section -->
+          <div
+            class="tab-pane fade"
+            id="sabado"
+            role="tabpanel"
+            aria-labelledby="sabado-tab"
           >
-            Sabado
-          </button>
-        </li>
-        <li class="nav-item" role="presentation">
-          <button
-            class="nav-link"
-            id="sunday-tab"
-            data-bs-toggle="tab"
-            data-bs-target="#sunday"
-            type="button"
-            role="tab"
-            aria-controls="sunday"
-            aria-selected="false"
+            <div class="card mt-3">
+              <div class="card-header text-center">
+                <h3 class="card-title mb-0">
+                  <button
+                    class="btn btn-dark"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#saturday-ferrol-coruna"
+                    role="button"
+                    aria-expanded="false"
+                    aria-controls="saturday-ferrol-coruna"
+                  >
+                    <i class="bi bi-bus-front-fill ico-bus"></i> Sentido: Ferrol
+                    <img
+                      class="icon-right-arrow"
+                      src="./assets/icons/icon-right-blue.png"
+                      alt="right arrow icon"
+                    />
+                    Coruña
+                  </button>
+                </h3>
+              </div>
+              <!-- Collapsible content - Saturday: Ferrol - Coruña -->
+              <div id="saturday-ferrol-coruna" class="collapse">
+                <div class="card-body">
+                  <table class="table table-striped table-condensed">
+                    <thead>
+                      <tr class="route-list table-dark">
+                        <th scope="col">Hora</th>
+                      </tr>
+                    </thead>
+                    <tbody class="cities-data" id="corunaFerrolSaturdayData">
+                      <!-- JavaScript will fill this -->
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            <div class="card mt-3">
+              <div class="card-header text-center">
+                <h3 class="card-title mb-0">
+                  <button
+                    class="btn btn-dark"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#saturday-coruna-ferrol"
+                    role="button"
+                    aria-expanded="false"
+                    aria-controls="saturday-coruna-ferrol"
+                  >
+                    <i class="bi bi-bus-front-fill ico-bus"></i> Sentido: Coruña
+                    <img
+                      class="icon-right-arrow"
+                      src="./assets/icons/icon-right-blue.png"
+                      alt="right arrow icon"
+                    />
+                    Ferrol
+                  </button>
+                </h3>
+              </div>
+              <!-- Collapsible content - Saturday: Coruña - Ferrol -->
+              <div id="saturday-coruna-ferrol" class="collapse">
+                <div class="card-body">
+                  <table class="table table-striped table-condensed">
+                    <thead>
+                      <tr class="route-list table-dark">
+                        <th scope="col">Hora</th>
+                      </tr>
+                    </thead>
+                    <tbody class="cities-data" id="ferrolCorunaSaturdayData">
+                      <!-- JavaScript will fill this -->
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- sunday Section -->
+          <div
+            class="tab-pane fade"
+            id="sunday"
+            role="tabpanel"
+            aria-labelledby="sunday-tab"
           >
-            Domingo y Festivos
-          </button>
-        </li>
-      </ul>
-
-      <div class="tab-content" id="scheduleTabsContent">
-        <!-- Lunes - Viernes Section -->
-        <div
-          class="tab-pane fade show active"
-          id="lunes-viernes"
-          role="tabpanel"
-          aria-labelledby="lunes-viernes-tab"
-        >
-          <div class="card mt-3">
-            <div class="card-header text-center">
-              <h3 class="card-title mb-0">
-                <button
-                  class="btn btn-dark"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#labor-day-ferrol-coruna"
-                  role="button"
-                  aria-expanded="false"
-                  aria-controls="labor-day-ferrol-coruna"
-                >
-                  <i class="bi bi-bus-front-fill ico-bus"></i> Sentido: Ferrol
-                  <img
-                    class="icon-right-arrow"
-                    src="./assets/icons/icon-right-blue.png"
-                    alt="right arrow icon"
-                  />
-                  Coruña
-                </button>
-              </h3>
-            </div>
-            <!-- Collapsible content - Ferrol -> Coruña -->
-            <div id="labor-day-ferrol-coruna" class="collapse">
-              <div class="card-body">
-                <table class="table table-striped table-condensed">
-                  <thead>
-                    <tr class="route-list table-dark">
-                      <th scope="col">Hora</th>
-                    </tr>
-                  </thead>
-                  <tbody class="cities-data" id="tbl-labor-day-ferrol-coruna">
-                    <!-- JavaScript will fill this -->
-                  </tbody>
-                </table>
+            <div class="card mt-3">
+              <div class="card-header text-center">
+                <h3 class="card-title mb-0">
+                  <button
+                    class="btn btn-dark"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#sunday-ferrol-coruna"
+                    role="button"
+                    aria-expanded="false"
+                    aria-controls="sunday-ferrol-coruna"
+                  >
+                    <i class="bi bi-bus-front-fill ico-bus"></i> Sentido: Ferrol
+                    <img
+                      class="icon-right-arrow"
+                      src="./assets/icons/icon-right-blue.png"
+                      alt="right arrow icon"
+                    />
+                    Coruña
+                  </button>
+                </h3>
+              </div>
+              <!-- Collapsible content - Sunday: Coruña - Ferrol -->
+              <div id="sunday-ferrol-coruna" class="collapse">
+                <div class="card-body">
+                  <table class="table table-striped table-condensed">
+                    <thead>
+                      <tr class="route-list table-dark">
+                        <th scope="col">Hora</th>
+                      </tr>
+                    </thead>
+                    <tbody class="cities-data" id="corunaFerrolSundayData">
+                      <!-- JavaScript will fill this -->
+                    </tbody>
+                  </table>
+                </div>
               </div>
             </div>
-          </div>
 
-          <div class="card mt-3">
-            <div class="card-header text-center">
-              <h3 class="card-title mb-0">
-                <button
-                  class="btn btn-dark"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#labor-day-coruna-ferrol"
-                  role="button"
-                  aria-expanded="false"
-                  aria-controls="labor-day-coruna-ferrol"
-                >
-                  <i class="bi bi-bus-front-fill ico-bus"></i> Sentido: Coruña
-                  <img
-                    class="icon-right-arrow"
-                    src="./assets/icons/icon-right-blue.png"
-                    alt="right arrow icon"
-                  />
-                  Ferrol
-                </button>
-              </h3>
-            </div>
-            <!-- Collapsible content - Coruña -> Ferrol -->
-            <div id="labor-day-coruna-ferrol" class="collapse">
-              <div class="card-body">
-                <table class="table table-striped table-condensed">
-                  <thead>
-                    <tr class="route-list table-dark">
-                      <th scope="col">Hora</th>
-                    </tr>
-                  </thead>
-                  <tbody class="cities-data" id="tbl-labor-day-coruna-ferrol">
-                    <!-- JavaScript will fill this -->
-                  </tbody>
-                </table>
+            <div class="card mt-3">
+              <div class="card-header text-center">
+                <h3 class="card-title mb-0">
+                  <button
+                    class="btn btn-dark"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#sunday-coruna-ferrol"
+                    role="button"
+                    aria-expanded="false"
+                    aria-controls="sunday-coruna-ferrol"
+                  >
+                    <i class="bi bi-bus-front-fill ico-bus"></i> Sentido: Coruña
+                    <img
+                      class="icon-right-arrow"
+                      src="./assets/icons/icon-right-blue.png"
+                      alt="right arrow icon"
+                    />
+                    Ferrol
+                  </button>
+                </h3>
               </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Sabado Section -->
-        <div
-          class="tab-pane fade"
-          id="sabado"
-          role="tabpanel"
-          aria-labelledby="sabado-tab"
-        >
-          <div class="card mt-3">
-            <div class="card-header text-center">
-              <h3 class="card-title mb-0">
-                <button
-                  class="btn btn-dark"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#saturday-ferrol-coruna"
-                  role="button"
-                  aria-expanded="false"
-                  aria-controls="saturday-ferrol-coruna"
-                >
-                  <i class="bi bi-bus-front-fill ico-bus"></i> Sentido: Ferrol
-                  <img
-                    class="icon-right-arrow"
-                    src="./assets/icons/icon-right-blue.png"
-                    alt="right arrow icon"
-                  />
-                  Coruña
-                </button>
-              </h3>
-            </div>
-            <!-- Collapsible content - Saturday: Ferrol - Coruña -->
-            <div id="saturday-ferrol-coruna" class="collapse">
-              <div class="card-body">
-                <table class="table table-striped table-condensed">
-                  <thead>
-                    <tr class="route-list table-dark">
-                      <th scope="col">Hora</th>
-                    </tr>
-                  </thead>
-                  <tbody class="cities-data" id="corunaFerrolSaturdayData">
-                    <!-- JavaScript will fill this -->
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
-
-          <div class="card mt-3">
-            <div class="card-header text-center">
-              <h3 class="card-title mb-0">
-                <button
-                  class="btn btn-dark"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#saturday-coruna-ferrol"
-                  role="button"
-                  aria-expanded="false"
-                  aria-controls="saturday-coruna-ferrol"
-                >
-                  <i class="bi bi-bus-front-fill ico-bus"></i> Sentido: Coruña
-                  <img
-                    class="icon-right-arrow"
-                    src="./assets/icons/icon-right-blue.png"
-                    alt="right arrow icon"
-                  />
-                  Ferrol
-                </button>
-              </h3>
-            </div>
-            <!-- Collapsible content - Saturday: Coruña - Ferrol -->
-            <div id="saturday-coruna-ferrol" class="collapse">
-              <div class="card-body">
-                <table class="table table-striped table-condensed">
-                  <thead>
-                    <tr class="route-list table-dark">
-                      <th scope="col">Hora</th>
-                    </tr>
-                  </thead>
-                  <tbody class="cities-data" id="ferrolCorunaSaturdayData">
-                    <!-- JavaScript will fill this -->
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- sunday Section -->
-        <div
-          class="tab-pane fade"
-          id="sunday"
-          role="tabpanel"
-          aria-labelledby="sunday-tab"
-        >
-          <div class="card mt-3">
-            <div class="card-header text-center">
-              <h3 class="card-title mb-0">
-                <button
-                  class="btn btn-dark"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#sunday-ferrol-coruna"
-                  role="button"
-                  aria-expanded="false"
-                  aria-controls="sunday-ferrol-coruna"
-                >
-                  <i class="bi bi-bus-front-fill ico-bus"></i> Sentido: Ferrol
-                  <img
-                    class="icon-right-arrow"
-                    src="./assets/icons/icon-right-blue.png"
-                    alt="right arrow icon"
-                  />
-                  Coruña
-                </button>
-              </h3>
-            </div>
-            <!-- Collapsible content - Sunday: Coruña - Ferrol -->
-            <div id="sunday-ferrol-coruna" class="collapse">
-              <div class="card-body">
-                <table class="table table-striped table-condensed">
-                  <thead>
-                    <tr class="route-list table-dark">
-                      <th scope="col">Hora</th>
-                    </tr>
-                  </thead>
-                  <tbody class="cities-data" id="corunaFerrolSundayData">
-                    <!-- JavaScript will fill this -->
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
-
-          <div class="card mt-3">
-            <div class="card-header text-center">
-              <h3 class="card-title mb-0">
-                <button
-                  class="btn btn-dark"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#sunday-coruna-ferrol"
-                  role="button"
-                  aria-expanded="false"
-                  aria-controls="sunday-coruna-ferrol"
-                >
-                  <i class="bi bi-bus-front-fill ico-bus"></i> Sentido: Coruña
-                  <img
-                    class="icon-right-arrow"
-                    src="./assets/icons/icon-right-blue.png"
-                    alt="right arrow icon"
-                  />
-                  Ferrol
-                </button>
-              </h3>
-            </div>
-            <!-- Collapsible content - Sunday: Ferrol - Coruña -->
-            <div id="sunday-coruna-ferrol" class="collapse">
-              <div class="card-body">
-                <table class="table table-striped table-condensed">
-                  <thead>
-                    <tr class="route-list table-dark">
-                      <th scope="col">Hora</th>
-                    </tr>
-                  </thead>
-                  <tbody class="cities-data" id="ferrolCorunaSundayData">
-                    <!-- JavaScript will fill this -->
-                  </tbody>
-                </table>
+              <!-- Collapsible content - Sunday: Ferrol - Coruña -->
+              <div id="sunday-coruna-ferrol" class="collapse">
+                <div class="card-body">
+                  <table class="table table-striped table-condensed">
+                    <thead>
+                      <tr class="route-list table-dark">
+                        <th scope="col">Hora</th>
+                      </tr>
+                    </thead>
+                    <tbody class="cities-data" id="ferrolCorunaSundayData">
+                      <!-- JavaScript will fill this -->
+                    </tbody>
+                  </table>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </main>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="./js/script.js"></script>
