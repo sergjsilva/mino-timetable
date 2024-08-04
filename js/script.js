@@ -24,11 +24,17 @@ const anchorList = document.querySelectorAll(".nav-tabs .nav-link");
 
 anchorList.forEach((anchorElement) => {
   anchorElement.addEventListener("click", (event) => {
+    const screenWidth = window.innerWidth;
+
     anchorList.forEach((anchor) => {
-      if (anchor.classList.contains("active")) {
-        anchor.parentElement.style.order = 1;
+      if (screenWidth <= 767) {
+        if (anchor.classList.contains("active")) {
+          anchor.parentElement.style.order = 2;
+        } else {
+          anchor.parentElement.style.order = 1;
+        }
       } else {
-        anchor.parentElement.style.order = 2;
+        anchor.parentElement.style.order = 1;
       }
     });
   });
