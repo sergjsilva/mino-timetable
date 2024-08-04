@@ -61,14 +61,6 @@ body {
   margin-top: 0.25rem;
 }
 
-.nav-tabs .nav-item {
-  /* Transition for both order and opacity */
-  transition: order 0.3s ease, opacity 0.3s ease;
-
-  /* Default opacity */
-  opacity: 1;
-}
-
 @keyframes fadeInAnimation {
   from {
     opacity: 0;

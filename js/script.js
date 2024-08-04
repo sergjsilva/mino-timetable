@@ -56,45 +56,43 @@ anchorList.forEach((anchorElement) => {
 const baseUrl = "https://sergjsilva.github.io/mino-timetable/JSON";
 
 //Stops Url
-const stopsLaborDayFerrolCorunaUrl = `${baseUrl}/stops-ferrol-to-coruna.JSON`;
-const stopsLaborDayCorunaFerrolUrl = `${baseUrl}/stops-coruna-to-ferrol.JSON`;
+const stopsFerrolCorunaUrl = `${baseUrl}/stops-ferrol-to-coruna.JSON`;
+const stopsCorunaFerrolUrl = `${baseUrl}/stops-coruna-to-ferrol.JSON`;
 
 //Routes Url
 const routesLaborDayFerrolCorunaUrl = `${baseUrl}/bus-laborDay-ferrol-to-coruna.JSON`;
 const routesLaborDayCorunaFerrolUrl = `${baseUrl}/bus-laborDay-coruna-to-ferrol.json`;
 
+const routesSaturdayFerrolCorunaUrl = `${baseUrl}/bus-saturday-ferrol-to-coruna.json`;
+const routesSaturdayCorunaFerrolUrl = `${baseUrl}/bus-saturday-coruna-to-ferrol.json`;
+
+const routesSundayFerrolCorunaUrl = `${baseUrl}/bus-sunday-ferrol-to-coruna.json`;
+const routesSundayCorunaFerrolUrl = `${baseUrl}/bus-sunday-coruna-to-ferrol.json`;
+
 //------------------
 // Helper Functions
 //------------------
 
-async function loadData(stopsUrl, routesUrl) {
+async function loadData(url) {
   try {
     // Fetch the stops data
-    const stopsResponse = await fetch(stopsUrl);
-    if (!stopsResponse.ok) {
-      throw new Error("Failed to load stops data");
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error(`Failed to loading ${url}`);
     }
-    const stopList = await stopsResponse.json();
-
-    // Fetch the route data
-    const routesResponse = await fetch(routesUrl);
-    if (!routesResponse.ok) {
-      throw new Error("Failed to load route data");
-    }
-    const routeList = await routesResponse.json();
+    const data = await response.json();
 
     // Return the fetched data
-    return { stopList, routeList };
+    return data;
   } catch (error) {
     console.error("Error fetching data:", error);
-    // Return empty arrays in case of an error
-    return { stopList: [], routeList: [] };
+    return null;
   }
 }
 
-async function fillTableData(stopsUrl, routesUrl, tableId) {
+async function fillTableData(stopList, routesUrl, tableId) {
   // load Data
-  const { stopList, routeList } = await loadData(stopsUrl, routesUrl);
+  const routeList = await loadData(routesUrl);
   const tableContainer = document.querySelector(tableId);
 
   if (!tableContainer) {
@@ -115,7 +113,7 @@ async function fillTableData(stopsUrl, routesUrl, tableId) {
   }
 
   const tableBodyContainer = tableContainer.querySelector(".cities-data");
-  console.log(tableBodyContainer);
+
   for (let i = 0; i < stopList.length; i++) {
     let rowData = document.createElement("tr");
 
@@ -142,15 +140,16 @@ async function fillTableData(stopsUrl, routesUrl, tableId) {
   }
 }
 
-function getButtonByTarget(target) {
-  return document.querySelector(`button[data-bs-target="${target}"]`);
+async function loadFerrolCorunaStops() {
+  return await loadData(stopsFerrolCorunaUrl);
 }
-function printButtonTarget(btn) {
-  console.log(`${btn.getAttribute("data-bs-target")}`);
+
+async function loadCorunaFerrolStops() {
+  return await loadData(stopsCorunaFerrolUrl);
 }
 
 // On Load
-window.addEventListener("load", () => {
+window.addEventListener("load", async () => {
   const screenWidth = window.innerWidth;
   anchorList.forEach((anchor) => {
     if (screenWidth <= 767) {
@@ -163,17 +162,51 @@ window.addEventListener("load", () => {
       anchor.parentElement.style.order = 1;
     }
   });
-  loader.hidden = false;
+
+  if (loader) {
+    loader.hidden = false;
+  }
+
+  const stopsFerrolCoruna = await loadFerrolCorunaStops();
+  const stopsCorunaFerrol = await loadCorunaFerrolStops();
+
+  // fillTableData(
+  //   stopsFerrolCoruna,
+  //   routesLaborDayFerrolCorunaUrl,
+  //   "#tbl-labor-day-ferrol-coruna"
+  // );
+  // fillTableData(
+  //   stopsCorunaFerrol,
+  //   routesLaborDayCorunaFerrolUrl,
+  //   "#tbl-labor-day-coruna-ferrol"
+  // );
+  // fillTableData(
+  //   stopsFerrolCoruna,
+  //   routesSaturdayFerrolCorunaUrl,
+  //   "#tbl-saturday-ferrol-coruna"
+  // );
+
+  /* ----------------- */
+
   fillTableData(
-    stopsLaborDayFerrolCorunaUrl,
-    routesLaborDayFerrolCorunaUrl,
-    "#tbl-labor-day-ferrol-coruna"
+    stopsCorunaFerrol,
+    routesSaturdayCorunaFerrolUrl,
+    "#tbl-saturday-coruna-ferrol"
   );
-  fillTableData(
-    stopsLaborDayCorunaFerrolUrl,
-    routesLaborDayCorunaFerrolUrl,
-    "#tbl-labor-day-coruna-ferrol"
-  );
+
+  /*------*/
+
+  // fillTableData(
+  //   stopsFerrolCoruna,
+  //   routesSundayFerrolCorunaUrl,
+  //   "#tbl-sunday-ferrol-coruna"
+  // );
+
+  // fillTableData(
+  //   stopsCorunaFerrol,
+  //   routesSundayCorunaFerrolUrl,
+  //   "#tbl-sunday-coruna-ferrol"
+  // );
 
   loader.hidden = true;
 });
