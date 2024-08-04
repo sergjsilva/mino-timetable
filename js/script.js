@@ -131,3 +131,19 @@ function getButtonByTarget(target) {
 function printButtonTarget(btn) {
   console.log(`${btn.getAttribute("data-bs-target")}`);
 }
+
+// On Load
+window.addEventListener("load", () => {
+  const screenWidth = window.innerWidth;
+  anchorList.forEach((anchor) => {
+    if (screenWidth <= 767) {
+      if (anchor.classList.contains("active")) {
+        anchor.parentElement.style.order = 2;
+      } else {
+        anchor.parentElement.style.order = 1;
+      }
+    } else {
+      anchor.parentElement.style.order = 1;
+    }
+  });
+});
