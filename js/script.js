@@ -20,6 +20,19 @@ const btnSundayCorunaFerrol = getButtonByTarget(sundayCorunaFerrol);
 
 const loader = document.querySelector("#loader");
 
+const anchorList = document.querySelectorAll(".nav-tabs .nav-link");
+
+anchorList.forEach((anchorElement) => {
+  anchorElement.addEventListener("click", (event) => {
+    anchorList.forEach((anchor) => {
+      if (anchor.classList.contains("active")) {
+        anchor.parentElement.style.order = 1;
+      } else {
+        anchor.parentElement.style.order = 2;
+      }
+    });
+  });
+});
 // -------------------
 // Listener Functions
 // -------------------

@@ -28,9 +28,13 @@
       <div class="container" id="intro-page">
         <h1 class="text-center mx-auto fw-bold">Autobuses</h1>
         <h2 class="text-center mx-auto fw-bold">Miño - A Coruña</h2>
-        <ul class="nav nav-tabs mt-5 fw-bold" id="scheduleTabs" role="tablist">
+        <ul
+          class="nav nav-tabs mt-5 fw-bold d-flex"
+          id="scheduleTabs"
+          role="tablist"
+        >
           <li class="nav-item" role="presentation">
-            <button
+            <a
               class="nav-link active"
               id="lunes-viernes-tab"
               data-bs-toggle="tab"
@@ -41,10 +45,10 @@
               aria-selected="true"
             >
               Lunes - Viernes
-            </button>
+            </a>
           </li>
           <li class="nav-item" role="presentation">
-            <button
+            <a
               class="nav-link"
               id="sabado-tab"
               data-bs-toggle="tab"
@@ -55,25 +59,25 @@
               aria-selected="false"
             >
               Sabado
-            </button>
+            </a>
           </li>
           <li class="nav-item" role="presentation">
-            <button
+            <a
               class="nav-link"
-              id="sunday-tab"
+              id="domingo-tab"
               data-bs-toggle="tab"
-              data-bs-target="#sunday"
+              data-bs-target="#domingo"
               type="button"
               role="tab"
-              aria-controls="sunday"
+              aria-controls="domingo"
               aria-selected="false"
             >
               Domingo y Festivos
-            </button>
+            </a>
           </li>
         </ul>
 
-        <div class="tab-content" id="scheduleTabsContent">
+        <div class="tab-content">
           <!-- Lunes - Viernes Section -->
           <div
             class="tab-pane fade show active"
@@ -84,7 +88,7 @@
             <div class="card mt-3">
               <div class="card-header text-center">
                 <h3 class="card-title mb-0">
-                  <button
+                  <a
                     class="btn btn-dark"
                     data-bs-toggle="collapse"
                     data-bs-target="#labor-day-ferrol-coruna"
@@ -99,7 +103,7 @@
                       alt="right arrow icon"
                     />
                     Coruña
-                  </button>
+                  </a>
                 </h3>
               </div>
               <!-- Collapsible content - Ferrol -> Coruña -->
@@ -129,7 +133,7 @@
             <div class="card mt-3">
               <div class="card-header text-center">
                 <h3 class="card-title mb-0">
-                  <button
+                  <a
                     class="btn btn-dark"
                     data-bs-toggle="collapse"
                     data-bs-target="#labor-day-coruna-ferrol"
@@ -144,7 +148,7 @@
                       alt="right arrow icon"
                     />
                     Ferrol
-                  </button>
+                  </a>
                 </h3>
               </div>
               <!-- Collapsible content - Coruña -> Ferrol -->
@@ -175,7 +179,7 @@
             <div class="card mt-3">
               <div class="card-header text-center">
                 <h3 class="card-title mb-0">
-                  <button
+                  <a
                     class="btn btn-dark"
                     data-bs-toggle="collapse"
                     data-bs-target="#saturday-ferrol-coruna"
@@ -190,7 +194,7 @@
                       alt="right arrow icon"
                     />
                     Coruña
-                  </button>
+                  </a>
                 </h3>
               </div>
               <!-- Collapsible content - Saturday: Ferrol - Coruña -->
@@ -213,7 +217,7 @@
             <div class="card mt-3">
               <div class="card-header text-center">
                 <h3 class="card-title mb-0">
-                  <button
+                  <a
                     class="btn btn-dark"
                     data-bs-toggle="collapse"
                     data-bs-target="#saturday-coruna-ferrol"
@@ -228,7 +232,7 @@
                       alt="right arrow icon"
                     />
                     Ferrol
-                  </button>
+                  </a>
                 </h3>
               </div>
               <!-- Collapsible content - Saturday: Coruña - Ferrol -->
@@ -249,17 +253,17 @@
             </div>
           </div>
 
-          <!-- sunday Section -->
+          <!-- Domingo Section -->
           <div
             class="tab-pane fade"
-            id="sunday"
+            id="domingo"
             role="tabpanel"
-            aria-labelledby="sunday-tab"
+            aria-labelledby="domingo-tab"
           >
             <div class="card mt-3">
               <div class="card-header text-center">
                 <h3 class="card-title mb-0">
-                  <button
+                  <a
                     class="btn btn-dark"
                     data-bs-toggle="collapse"
                     data-bs-target="#sunday-ferrol-coruna"
@@ -274,7 +278,7 @@
                       alt="right arrow icon"
                     />
                     Coruña
-                  </button>
+                  </a>
                 </h3>
               </div>
               <!-- Collapsible content - Sunday: Coruña - Ferrol -->
@@ -297,7 +301,7 @@
             <div class="card mt-3">
               <div class="card-header text-center">
                 <h3 class="card-title mb-0">
-                  <button
+                  <a
                     class="btn btn-dark"
                     data-bs-toggle="collapse"
                     data-bs-target="#sunday-coruna-ferrol"
@@ -312,7 +316,7 @@
                       alt="right arrow icon"
                     />
                     Ferrol
-                  </button>
+                  </a>
                 </h3>
               </div>
               <!-- Collapsible content - Sunday: Ferrol - Coruña -->

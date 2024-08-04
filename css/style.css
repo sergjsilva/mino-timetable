@@ -1,7 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
-:root {
-  --bus-color: rgb(64, 224, 59);
-}
 
 * {
   margin: 0;
@@ -64,8 +61,23 @@ body {
   margin-top: 0.25rem;
 }
 
-.nav-link {
+.nav-tabs .nav-link {
   font-size: 16px;
+  color: #fff;
+  margin-right: 1rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.nav-tabs .nav-link.active {
+  background-color: blue;
+  color: #fff;
+  border: 3px solid #fff;
+}
+
+.nav-tabs .nav-link:hover {
+  border: 3px solid white;
 }
 
 .ico-bus {
@@ -115,30 +127,14 @@ th:first-child {
 }
 
 /*  Media */
-@media screen and (max-width: 500px) {
-  .nav-link {
-    font-size: 15px;
+@media (max-width: 767px) {
+  .nav-tabs {
+    flex-direction: column;
   }
-}
-
-@media screen and (max-width: 490px) {
-  .nav-link {
-    font-size: 13px;
+  .nav-tabs .nav-item {
+    order: 1; /* Default order */
   }
-}
-
-@media screen and (max-width: 480px) {
-  table td,
-  table th {
-    font-size: 12px; /* Slightly smaller font size for very small screens */
-  }
-  .nav-link {
-    font-size: 12px;
-  }
-}
-
-@media screen and (max-width: 390px) {
-  .nav-link {
-    font-size: 9px;
+  .nav-tabs .nav-item.active {
+    order: 2; /* Active link should appear last */
   }
 }
