@@ -20,14 +20,24 @@ const btnSundayCorunaFerrol = getButtonByTarget(sundayCorunaFerrol);
 
 const loader = document.querySelector("#loader");
 
-const anchorList = document.querySelectorAll(".nav-tabs .nav-link");
+const navTabs = document.querySelector(".nav-tabs");
+const anchorList = navTabs.querySelectorAll(".nav-link");
+
+const screenWidth = window.innerWidth;
+const thresholdSize = 767;
+
+// -------------
+// Listener
+// -------------
+navTabs.addEventListener("animationend", () => {
+  navTabs.classList.remove("fadeIn");
+});
 
 anchorList.forEach((anchorElement) => {
   anchorElement.addEventListener("click", (event) => {
-    const screenWidth = window.innerWidth;
-
     anchorList.forEach((anchor) => {
-      if (screenWidth <= 767) {
+      if (screenWidth <= thresholdSize) {
+        navTabs.classList.add("fadeIn");
         if (anchor.classList.contains("active")) {
           anchor.parentElement.style.order = 2;
         } else {

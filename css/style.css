@@ -61,6 +61,27 @@ body {
   margin-top: 0.25rem;
 }
 
+.nav-tabs .nav-item {
+  /* Transition for both order and opacity */
+  transition: order 0.3s ease, opacity 0.3s ease;
+
+  /* Default opacity */
+  opacity: 1;
+}
+
+@keyframes fadeInAnimation {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fadeIn {
+  animation: fadeInAnimation 5s;
+}
+
 .nav-tabs .nav-link {
   font-size: 16px;
   color: #fff;
@@ -127,14 +148,3 @@ th:first-child {
 }
 
 /*  Media */
-@media (max-width: 767px) {
-  .nav-tabs {
-    flex-direction: column;
-  }
-  .nav-tabs .nav-item {
-    order: 1; /* Default order */
-  }
-  .nav-tabs .nav-item.active {
-    order: 2; /* Active link should appear last */
-  }
-}
