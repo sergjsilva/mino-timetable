@@ -1,22 +1,22 @@
 // Monday-Friday
-const laborFerrolCoruna = "#labor-day-ferrol-coruna";
-const laborCorunaFerrol = "#labor-day-coruna-ferrol";
+// const laborFerrolCoruna = "#labor-day-ferrol-coruna";
+// const laborCorunaFerrol = "#labor-day-coruna-ferrol";
 
-// Saturday
-const saturdayFerrolCoruna = "#saturday-ferrol-coruna";
-const saturdayCorunaFerrol = "#saturday-coruna-ferrol";
+// // Saturday
+// const saturdayFerrolCoruna = "#saturday-ferrol-coruna";
+// const saturdayCorunaFerrol = "#saturday-coruna-ferrol";
 
-// Sunday
-const sundayFerrolCoruna = "#sunday-ferrol-coruna";
-const sundayCorunaFerrol = "#sunday-coruna-ferrol";
+// // Sunday
+// const sundayFerrolCoruna = "#sunday-ferrol-coruna";
+// const sundayCorunaFerrol = "#sunday-coruna-ferrol";
 
 // Buttons
-const btnLaborFerrolCoruna = getButtonByTarget(laborFerrolCoruna);
-const btnLaborCorunaFerrol = getButtonByTarget(laborCorunaFerrol);
-const btnSaturdayFerrolCoruna = getButtonByTarget(saturdayFerrolCoruna);
-const btnSaturdayCorunaFerrol = getButtonByTarget(saturdayCorunaFerrol);
-const btnSundayFerrolCoruna = getButtonByTarget(sundayFerrolCoruna);
-const btnSundayCorunaFerrol = getButtonByTarget(sundayCorunaFerrol);
+// const btnLaborFerrolCoruna = getButtonByTarget(laborFerrolCoruna);
+// const btnLaborCorunaFerrol = getButtonByTarget(laborCorunaFerrol);
+// const btnSaturdayFerrolCoruna = getButtonByTarget(saturdayFerrolCoruna);
+// const btnSaturdayCorunaFerrol = getButtonByTarget(saturdayCorunaFerrol);
+// const btnSundayFerrolCoruna = getButtonByTarget(sundayFerrolCoruna);
+// const btnSundayCorunaFerrol = getButtonByTarget(sundayCorunaFerrol);
 
 const loader = document.querySelector("#loader");
 
@@ -54,17 +54,15 @@ anchorList.forEach((anchorElement) => {
 // -------------------
 
 const baseUrl = "https://sergjsilva.github.io/mino-timetable/JSON";
+
+//Stops Url
 const stopsLaborDayFerrolCorunaUrl = `${baseUrl}/stops-ferrol-to-coruna.JSON`;
+const stopsLaborDayCorunaFerrolUrl = `${baseUrl}/stops-coruna-to-ferrol.JSON`;
+
+//Routes Url
 const routesLaborDayFerrolCorunaUrl = `${baseUrl}/bus-laborDay-ferrol-to-coruna.JSON`;
+const routesLaborDayCorunaFerrolUrl = `${baseUrl}/bus-laborDay-coruna-to-ferrol.json`;
 
-loader.hidden = false;
-fillTableData(
-  stopsLaborDayFerrolCorunaUrl,
-  routesLaborDayFerrolCorunaUrl,
-  "#tbl-labor-day-ferrol-coruna"
-);
-
-loader.hidden = true;
 //------------------
 // Helper Functions
 //------------------
@@ -98,7 +96,15 @@ async function fillTableData(stopsUrl, routesUrl, tableId) {
   // load Data
   const { stopList, routeList } = await loadData(stopsUrl, routesUrl);
   const tableContainer = document.querySelector(tableId);
+
+  if (!tableContainer) {
+    console.error("Element not found:", tableId);
+  }
+
   const routeListContainer = tableContainer.querySelector(".route-list");
+  if (!routeListContainer) {
+    console.error("Element not found:", tableId);
+  }
 
   // Insert Table Headers
   for (let bus of routeList) {
@@ -109,6 +115,7 @@ async function fillTableData(stopsUrl, routesUrl, tableId) {
   }
 
   const tableBodyContainer = tableContainer.querySelector(".cities-data");
+  console.log(tableBodyContainer);
   for (let i = 0; i < stopList.length; i++) {
     let rowData = document.createElement("tr");
 
@@ -156,4 +163,17 @@ window.addEventListener("load", () => {
       anchor.parentElement.style.order = 1;
     }
   });
+  loader.hidden = false;
+  fillTableData(
+    stopsLaborDayFerrolCorunaUrl,
+    routesLaborDayFerrolCorunaUrl,
+    "#tbl-labor-day-ferrol-coruna"
+  );
+  fillTableData(
+    stopsLaborDayCorunaFerrolUrl,
+    routesLaborDayCorunaFerrolUrl,
+    "#tbl-labor-day-coruna-ferrol"
+  );
+
+  loader.hidden = true;
 });
