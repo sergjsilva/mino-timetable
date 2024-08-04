@@ -6,6 +6,29 @@ const anchorList = navTabs.querySelectorAll(".nav-link");
 const screenWidth = window.innerWidth;
 const thresholdSize = 767;
 
+const collapsiblesElements = [
+  "#labor-day-ferrol-coruna",
+  "#labor-day-coruna-ferrol",
+  "#saturday-ferrol-coruna",
+  "#saturday-coruna-ferrol",
+  "#sunday-ferrol-coruna",
+  "#sunday-coruna-ferrol",
+];
+
+let collapsibleList = [];
+collapsiblesElements.forEach((element) => {
+  collapsibleList.push(document.querySelector(`[data-bs-target="${element}"]`));
+});
+
+collapsibleList.forEach((currentAnchor) => {
+  currentAnchor.addEventListener("click", (event) => {
+    collapsiblesElements.forEach((element) => {
+      const anchor = document.querySelector(`[data-bs-target="${element}"]`);
+      console.log(`${element} ... ${anchor.classList.contains("show")}`);
+    });
+  });
+});
+
 // -------------
 // Listener
 // -------------
@@ -21,7 +44,6 @@ anchorList.forEach((anchorElement) => {
       const parent = anchor.parentElement;
       if (screenWidth <= thresholdSize) {
         navTabs.classList.add("fadeIn");
-        console.log("Short Screen");
         if (anchor.classList.contains("active")) {
           parent.style.order = 2;
         } else {
