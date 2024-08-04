@@ -1,23 +1,3 @@
-// Monday-Friday
-// const laborFerrolCoruna = "#labor-day-ferrol-coruna";
-// const laborCorunaFerrol = "#labor-day-coruna-ferrol";
-
-// // Saturday
-// const saturdayFerrolCoruna = "#saturday-ferrol-coruna";
-// const saturdayCorunaFerrol = "#saturday-coruna-ferrol";
-
-// // Sunday
-// const sundayFerrolCoruna = "#sunday-ferrol-coruna";
-// const sundayCorunaFerrol = "#sunday-coruna-ferrol";
-
-// Buttons
-// const btnLaborFerrolCoruna = getButtonByTarget(laborFerrolCoruna);
-// const btnLaborCorunaFerrol = getButtonByTarget(laborCorunaFerrol);
-// const btnSaturdayFerrolCoruna = getButtonByTarget(saturdayFerrolCoruna);
-// const btnSaturdayCorunaFerrol = getButtonByTarget(saturdayCorunaFerrol);
-// const btnSundayFerrolCoruna = getButtonByTarget(sundayFerrolCoruna);
-// const btnSundayCorunaFerrol = getButtonByTarget(sundayCorunaFerrol);
-
 const loader = document.querySelector("#loader");
 
 const navTabs = document.querySelector(".nav-tabs");
@@ -29,6 +9,8 @@ const thresholdSize = 767;
 // -------------
 // Listener
 // -------------
+
+// waiting for animation
 navTabs.addEventListener("animationend", () => {
   navTabs.classList.remove("fadeIn");
 });
@@ -36,15 +18,17 @@ navTabs.addEventListener("animationend", () => {
 anchorList.forEach((anchorElement) => {
   anchorElement.addEventListener("click", (event) => {
     anchorList.forEach((anchor) => {
+      const parent = anchor.parentElement;
       if (screenWidth <= thresholdSize) {
         navTabs.classList.add("fadeIn");
+        console.log("Short Screen");
         if (anchor.classList.contains("active")) {
-          anchor.parentElement.style.order = 2;
+          parent.style.order = 2;
         } else {
-          anchor.parentElement.style.order = 1;
+          parent.style.order = 1;
         }
       } else {
-        anchor.parentElement.style.order = 1;
+        parent.style.order = 1;
       }
     });
   });
@@ -170,21 +154,21 @@ window.addEventListener("load", async () => {
   const stopsFerrolCoruna = await loadFerrolCorunaStops();
   const stopsCorunaFerrol = await loadCorunaFerrolStops();
 
-  // fillTableData(
-  //   stopsFerrolCoruna,
-  //   routesLaborDayFerrolCorunaUrl,
-  //   "#tbl-labor-day-ferrol-coruna"
-  // );
-  // fillTableData(
-  //   stopsCorunaFerrol,
-  //   routesLaborDayCorunaFerrolUrl,
-  //   "#tbl-labor-day-coruna-ferrol"
-  // );
-  // fillTableData(
-  //   stopsFerrolCoruna,
-  //   routesSaturdayFerrolCorunaUrl,
-  //   "#tbl-saturday-ferrol-coruna"
-  // );
+  fillTableData(
+    stopsFerrolCoruna,
+    routesLaborDayFerrolCorunaUrl,
+    "#tbl-labor-day-ferrol-coruna"
+  );
+  fillTableData(
+    stopsCorunaFerrol,
+    routesLaborDayCorunaFerrolUrl,
+    "#tbl-labor-day-coruna-ferrol"
+  );
+  fillTableData(
+    stopsFerrolCoruna,
+    routesSaturdayFerrolCorunaUrl,
+    "#tbl-saturday-ferrol-coruna"
+  );
 
   /* ----------------- */
 
@@ -196,17 +180,17 @@ window.addEventListener("load", async () => {
 
   /*------*/
 
-  // fillTableData(
-  //   stopsFerrolCoruna,
-  //   routesSundayFerrolCorunaUrl,
-  //   "#tbl-sunday-ferrol-coruna"
-  // );
+  fillTableData(
+    stopsFerrolCoruna,
+    routesSundayFerrolCorunaUrl,
+    "#tbl-sunday-ferrol-coruna"
+  );
 
-  // fillTableData(
-  //   stopsCorunaFerrol,
-  //   routesSundayCorunaFerrolUrl,
-  //   "#tbl-sunday-coruna-ferrol"
-  // );
+  fillTableData(
+    stopsCorunaFerrol,
+    routesSundayCorunaFerrolUrl,
+    "#tbl-sunday-coruna-ferrol"
+  );
 
   loader.hidden = true;
 });
