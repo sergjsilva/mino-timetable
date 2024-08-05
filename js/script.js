@@ -6,7 +6,7 @@ const anchorList = navTabs.querySelectorAll(".nav-link");
 const screenWidth = window.innerWidth;
 const thresholdSize = 767;
 
-const collapsiblesElements = [
+const listOfIds = [
   "#labor-day-ferrol-coruna",
   "#labor-day-coruna-ferrol",
   "#saturday-ferrol-coruna",
@@ -15,19 +15,51 @@ const collapsiblesElements = [
   "#sunday-coruna-ferrol",
 ];
 
-let collapsibleList = [];
-collapsiblesElements.forEach((element) => {
-  collapsibleList.push(document.querySelector(`[data-bs-target="${element}"]`));
+// anchor-button elements (Ferrol-to-Coruna and Coruna-to-Ferrol)
+let collapsibleDivList = [];
+
+// Storing the anchor-buttons
+listOfIds.forEach((id) => {
+  const divElement = document.querySelector(id);
+  collapsibleDivList.push(divElement);
 });
 
-collapsibleList.forEach((currentAnchor) => {
-  currentAnchor.addEventListener("click", (event) => {
-    collapsiblesElements.forEach((element) => {
-      const anchor = document.querySelector(`[data-bs-target="${element}"]`);
-      console.log(`${element} ... ${anchor.classList.contains("show")}`);
-    });
+collapsibleDivList.forEach((currentDiv) => {
+  currentDiv.addEventListener("shown.bs.collapse", () => {
+    const currentID = currentDiv.id;
+    for (let div of collapsibleDivList) {
+      const otherId = div.id;
+      if (otherId != currentID && isCollapsed(div)) {
+        div.classList.remove("show");
+      }
+    }
   });
 });
+
+function isCollapsed(element) {
+  return element.classList.contains("show");
+}
+
+// Listener in each button
+// collapsibleList.forEach((currentBtn) => {
+//   currentBtn.addEventListener("click", (event) => {
+//     const currentTargetID = currentBtn.getAttribute("data-bs-target");
+
+//     divElement.addEventListener("shown.bs.collapse", () => {
+//       const collapsed = isCollapsed(targetElement);
+//       console.log(
+//         `The element ${dataBsTarget} is ${
+//           collapsed ? "collapsed" : "expanded"
+//         } after showing.`
+//       );
+//     });
+
+//collapsibleList.forEach((element) => {
+//const anchor = document.querySelector(`[data-bs-target="${element}"]`);
+//console.log(`${element} ... ${anchor.classList.contains("show")}`);
+// });
+//   });
+// });
 
 // -------------
 // Listener
