@@ -21,17 +21,16 @@ body {
   bottom: 0;
   left: 0;
   right: 0;
-  background: rgba(255, 255, 255, 0.6);
 }
 
-.loader-items-container {
+.loader-item-container {
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 
-.loader-items-container img {
+.loader-item-container img {
   position: relative;
   left: 5%;
 }
